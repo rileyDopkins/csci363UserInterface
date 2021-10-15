@@ -8,3 +8,13 @@ C:\Users\kpj17\OneDrive\Documents\UND\3 Fall 2021\CSCI 363\WindowsFormsApp1\obj\
 C:\Users\kpj17\OneDrive\Documents\UND\3 Fall 2021\CSCI 363\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\kpj17\OneDrive\Documents\UND\3 Fall 2021\CSCI 363\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\kpj17\OneDrive\Documents\UND\3 Fall 2021\CSCI 363\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\bin\Debug\WindowsFormsApp1.exe
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.exe
+C:\Users\popkins\Documents\CSCI363Repo\csci363UserInterface\obj\Debug\WindowsFormsApp1.pdb
