@@ -8,17 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// Line comment
-
-/* Block comment:
- - Form1.cs is the functionality part
- - Form1.cs [Desgin] is the design part
- 
- 
- Video Lecture 1: made it to 25:00    :-0
- */
-
-
 
 namespace WindowsFormsApp1
 {
@@ -26,11 +15,59 @@ namespace WindowsFormsApp1
     {
         public Form1()
         {
-            // Inititialize the form i.e. what they will see when the form starts up
             InitializeComponent();
 
-            // Everything after form initialization will be what happens after the form is opened.
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //SETTINGS TAB:
+            // set dropdownlist vals to a default
+            comboBx_general.SelectedIndex = 0;
+            comboBx_userMode.SelectedIndex = 0;
+        }
+
+        private void comboBx_general_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBx_general.SelectedIndex == 1)
+            {
+                //if it changes to on:
+                //enable manual vs/auto selection
+                comboBx_userMode.Enabled = true;
+                if (comboBx_userMode.SelectedIndex == 0)
+                {
+                    btn_addDose.Enabled = true;
+                }
+                else if (comboBx_userMode.SelectedIndex == 1)
+                {
+                    btn_addDose.Enabled = false;
+                }
+                //enable system status groupBox
+                grpBx_SystemStatus.Enabled = true;
+            }
+            else if (comboBx_general.SelectedIndex == 0)
+            {
+                //if it changes to off:
+                //disable manual vs/auto selection
+                comboBx_userMode.SelectedIndex = 0; //return to default MANUAL
+                comboBx_userMode.Enabled = false;  //disable the thing
+                btn_addDose.Enabled = false;
+                //disable system status groupBox, set all vals to initial
+                grpBx_SystemStatus.Enabled = false;  //disable groupbox
+                
+            }
+        }
+
+        private void comboBx_userMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBx_userMode.SelectedIndex == 0) //MANUAL
+            {
+                btn_addDose.Enabled = true;
+            }
+            else if (comboBx_userMode.SelectedIndex == 1)  //AUTO
+            {
+                btn_addDose.Enabled = false;
+            }
         }
     }
 }
