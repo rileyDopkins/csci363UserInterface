@@ -30,20 +30,20 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 100D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 95D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 100D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 89D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 90D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 110D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 105D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 100D);
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 88D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 98D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint61 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 100D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint62 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 95D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint63 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 100D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint64 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 89D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint65 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 90D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint66 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 110D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint67 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 105D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint68 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 100D);
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint69 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 88D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint70 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 98D);
             this.timer_day = new System.Windows.Forms.Timer(this.components);
             this.timer_systemTest = new System.Windows.Forms.Timer(this.components);
             this.timer_bloodSugarTest = new System.Windows.Forms.Timer(this.components);
@@ -84,9 +84,13 @@ namespace WindowsFormsApp1
             this.lbl_reservoirUnits = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.grpBx_SystemStatus.SuspendLayout();
             this.grpBx_system.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -100,6 +104,7 @@ namespace WindowsFormsApp1
             // timer_systemTest
             // 
             this.timer_systemTest.Interval = 30000;
+            this.timer_systemTest.Tick += new System.EventHandler(this.timer_systemTest_Tick);
             // 
             // label4
             // 
@@ -347,6 +352,9 @@ namespace WindowsFormsApp1
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -469,36 +477,36 @@ namespace WindowsFormsApp1
             // 
             // chart3
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart3.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart3.Legends.Add(legend7);
             this.chart3.Location = new System.Drawing.Point(171, 79);
             this.chart3.Margin = new System.Windows.Forms.Padding(2);
             this.chart3.Name = "chart3";
             this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.MarkerSize = 10;
-            series1.Name = "Blood Sugar";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            series1.Points.Add(dataPoint5);
-            series1.Points.Add(dataPoint6);
-            series1.Points.Add(dataPoint7);
-            series1.Points.Add(dataPoint8);
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series2.Legend = "Legend1";
-            series2.MarkerSize = 10;
-            series2.Name = "Insulin Injection";
-            series2.Points.Add(dataPoint9);
-            series2.Points.Add(dataPoint10);
-            this.chart3.Series.Add(series1);
-            this.chart3.Series.Add(series2);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series13.Legend = "Legend1";
+            series13.MarkerSize = 10;
+            series13.Name = "Blood Sugar";
+            series13.Points.Add(dataPoint61);
+            series13.Points.Add(dataPoint62);
+            series13.Points.Add(dataPoint63);
+            series13.Points.Add(dataPoint64);
+            series13.Points.Add(dataPoint65);
+            series13.Points.Add(dataPoint66);
+            series13.Points.Add(dataPoint67);
+            series13.Points.Add(dataPoint68);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series14.Legend = "Legend1";
+            series14.MarkerSize = 10;
+            series14.Name = "Insulin Injection";
+            series14.Points.Add(dataPoint69);
+            series14.Points.Add(dataPoint70);
+            this.chart3.Series.Add(series13);
+            this.chart3.Series.Add(series14);
             this.chart3.Size = new System.Drawing.Size(460, 244);
             this.chart3.TabIndex = 43;
             this.chart3.Text = "chart3";
@@ -509,6 +517,7 @@ namespace WindowsFormsApp1
             this.lbl_bs.BackColor = System.Drawing.SystemColors.Control;
             this.lbl_bs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_bs.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_bs.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_bs.Location = new System.Drawing.Point(23, 79);
             this.lbl_bs.Name = "lbl_bs";
             this.lbl_bs.Size = new System.Drawing.Size(143, 88);
@@ -553,9 +562,12 @@ namespace WindowsFormsApp1
             // 
             // tabControl
             // 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.ItemSize = new System.Drawing.Size(49, 18);
             this.tabControl.Location = new System.Drawing.Point(-3, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -570,6 +582,36 @@ namespace WindowsFormsApp1
             this.progressBar1.TabIndex = 53;
             this.progressBar1.Value = 100;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(46, 130);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(46, 159);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(46, 188);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -586,6 +628,7 @@ namespace WindowsFormsApp1
             this.grpBx_SystemStatus.PerformLayout();
             this.grpBx_system.ResumeLayout(false);
             this.grpBx_system.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
@@ -635,6 +678,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label lbl_reservoirUnits;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

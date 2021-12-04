@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_administer = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -61,10 +62,11 @@ namespace WindowsFormsApp1
             this.domainUD_units.Items.Add("4.5");
             this.domainUD_units.Items.Add("5.0");
             this.domainUD_units.Location = new System.Drawing.Point(205, 61);
-            this.domainUD_units.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.domainUD_units.Margin = new System.Windows.Forms.Padding(2);
             this.domainUD_units.Name = "domainUD_units";
             this.domainUD_units.Size = new System.Drawing.Size(123, 26);
             this.domainUD_units.TabIndex = 2;
+            this.domainUD_units.SelectedItemChanged += new System.EventHandler(this.domainUD_units_SelectedItemChanged);
             // 
             // label2
             // 
@@ -82,12 +84,13 @@ namespace WindowsFormsApp1
             // 
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_cancel.Location = new System.Drawing.Point(203, 118);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(125, 37);
             this.btn_cancel.TabIndex = 5;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_administer
             // 
@@ -99,19 +102,34 @@ namespace WindowsFormsApp1
             this.btn_administer.TabIndex = 6;
             this.btn_administer.Text = "Administer";
             this.btn_administer.UseVisualStyleBackColor = true;
+            this.btn_administer.Click += new System.EventHandler(this.btn_administer_Click);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Firebrick;
+            this.errorLabel.Location = new System.Drawing.Point(201, 89);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(57, 20);
+            this.errorLabel.TabIndex = 7;
+            this.errorLabel.Text = "label3";
+            this.errorLabel.Visible = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 183);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.btn_administer);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.domainUD_units);
             this.Controls.Add(this.label1);
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
@@ -128,5 +146,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_administer;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

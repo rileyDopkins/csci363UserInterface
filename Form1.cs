@@ -72,18 +72,19 @@ namespace WindowsFormsApp1
 
         private void lbl_bs_Click(object sender, EventArgs e)
         {
-            int bloodSugarNumber;
-            bloodSugarNumber = int.Parse(lbl_bs.Text);
-            if (bloodSugarNumber > 50)
+            //This logic will need to move, here for testing
+            float bloodSugarNumber;
+            bloodSugarNumber = float.Parse(lbl_bs.Text);
+            if (bloodSugarNumber < 50 || bloodSugarNumber > 110)
             {
-                //bad
+                lbl_bs.BackColor = Color.Red;
             }
-            else if (bloodSugarNumber < 50 && bloodSugarNumber > 80)
+            else if (bloodSugarNumber > 50 && bloodSugarNumber < 80)
             {
-                //warning
+                lbl_bs.BackColor = Color.Orange;
             } else
             {
-                //nominal
+                lbl_bs.BackColor = DefaultBackColor;
             }
         }
 
@@ -104,7 +105,8 @@ namespace WindowsFormsApp1
 
         private void btn_addDose_Click(object sender, EventArgs e)
         {
-           
+            Form2 f2 = new Form2(this);
+            f2.ShowDialog();
         }
 
         private void lbl_lastDose_Click(object sender, EventArgs e)
@@ -142,14 +144,44 @@ namespace WindowsFormsApp1
 
         }
 
-        private void addBloodSugarPoint(int hour, int bloodSugar)
+        public void addBloodSugarPoint(int hour, float bloodSugar)
         {
             chart3.Series["Blood Sugar"].Points.AddXY(hour, bloodSugar);
         }
 
-        private void addInjectionPoint(int hour, int bloodSugar)
+        public void addInjectionPoint(int hour, float bloodSugar)
         {
             chart3.Series["Insulin Injection"].Points.AddXY(hour, bloodSugar);
+        }
+
+        public void updateInsulinDose(String dose)
+        {
+            lbl_lastDose.Text = dose;
+        }
+        
+        //Quick test stuff
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lbl_bs.Text = "75";
+            addBloodSugarPoint(9, 75);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lbl_bs.Text = "45";
+            addBloodSugarPoint(10, 45);
+            addInjectionPoint(10, 45);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            lbl_bs.Text = "85";
+            addBloodSugarPoint(11, 85);
+        }
+
+        private void timer_systemTest_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
