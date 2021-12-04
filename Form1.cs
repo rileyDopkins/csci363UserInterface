@@ -18,6 +18,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
         }
+        int h, m, s, d; //timer
+
+
+        float reservoir = 300;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -25,6 +29,14 @@ namespace WindowsFormsApp1
             // set dropdownlist vals to a default
             comboBx_general.SelectedIndex = 0;
             comboBx_userMode.SelectedIndex = 0;
+
+            //24 HOUR TIMER:
+            h = 0;
+            m = 0;
+            s = 0;
+            d = 0;
+            //txtBx_time.Text = String.Format("{0:D2}:{1:D2}:{2:D2}:{3:D2}", h, m, s, d);
+            timer_day.Start();
         }
 
         private void comboBx_general_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,20 +84,7 @@ namespace WindowsFormsApp1
 
         private void lbl_bs_Click(object sender, EventArgs e)
         {
-            //This logic will need to move, here for testing
-            float bloodSugarNumber;
-            bloodSugarNumber = float.Parse(lbl_bs.Text);
-            if (bloodSugarNumber < 50 || bloodSugarNumber > 110)
-            {
-                lbl_bs.BackColor = Color.Red;
-            }
-            else if (bloodSugarNumber > 50 && bloodSugarNumber < 80)
-            {
-                lbl_bs.BackColor = Color.Orange;
-            } else
-            {
-                lbl_bs.BackColor = DefaultBackColor;
-            }
+            
         }
 
         private void lbl_reservoir_Click(object sender, EventArgs e)
@@ -179,7 +178,77 @@ namespace WindowsFormsApp1
             addBloodSugarPoint(11, 85);
         }
 
+        private void timer_day_Tick(object sender, EventArgs e)
+        {
+            s += 1;
+            if (s == 60)
+            {
+                s = 0;
+                m += 1;
+                if (m == 60)
+                {
+                    m = 0;
+                    h += 1;
+                }
+            }
+            lbl_24HourTimer.Text = String.Format("Clock: {0:D2}:{1:D2}:{2:D2}", h, m, s);
+
+        }
+
+        private void btn_test_Click(object sender, EventArgs e)
+        {
+            int checkedItem = checkedListBox1.SelectedIndex;
+            Console.WriteLine(checkedItem);
+            testEmitter(checkedItem);
+        }
+
+        public void testEmitter(int testName)
+        {
+            if(testName == 0)
+            {
+                progressBar1.Value = 15;
+                //progressBar1.BackColor = Color.Red; maybe ill fix it, if i FEEL like it
+                //write in error pop up
+                MessageBox.Show("Error.\n\n" +
+                    "<<Device will vibrate and sound an alarm>>", "Warning!");
+            }
+
+
+
+
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer_systemTest_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_bs_TextChanged(object sender, EventArgs e)
+        {
+            //This logic will need to move, here for testing
+            float bloodSugarNumber;
+            bloodSugarNumber = float.Parse(lbl_bs.Text);
+            if (bloodSugarNumber < 50 || bloodSugarNumber > 110)
+            {
+                lbl_bs.BackColor = Color.Red;
+            }
+            else if (bloodSugarNumber > 50 && bloodSugarNumber < 80)
+            {
+                lbl_bs.BackColor = Color.Orange;
+            }
+            else
+            {
+                lbl_bs.BackColor = DefaultBackColor;
+            }
+        }
+
+        private void lbl_24HourTimer_Click(object sender, EventArgs e)
         {
 
         }

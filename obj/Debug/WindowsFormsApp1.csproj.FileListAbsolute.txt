@@ -70,3 +70,14 @@ C:\Users\riley\OneDrive\Documents\GitHub\csci363UserInterface\obj\Debug\WindowsF
 C:\Users\riley\OneDrive\Documents\GitHub\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\riley\OneDrive\Documents\GitHub\csci363UserInterface\obj\Debug\WindowsFormsApp1.exe
 C:\Users\riley\OneDrive\Documents\GitHub\csci363UserInterface\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\bin\Debug\WindowsFormsApp1.exe
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.exe
+C:\Users\kpj17\Documents\csci363\csci363UserInterface\obj\Debug\WindowsFormsApp1.pdb

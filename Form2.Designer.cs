@@ -41,10 +41,9 @@ namespace WindowsFormsApp1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label1.Location = new System.Drawing.Point(72, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(96, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 29);
+            this.label1.Size = new System.Drawing.Size(286, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manual Insulin Dose";
             // 
@@ -61,10 +60,10 @@ namespace WindowsFormsApp1
             this.domainUD_units.Items.Add("4.0");
             this.domainUD_units.Items.Add("4.5");
             this.domainUD_units.Items.Add("5.0");
-            this.domainUD_units.Location = new System.Drawing.Point(205, 61);
-            this.domainUD_units.Margin = new System.Windows.Forms.Padding(2);
+            this.domainUD_units.Location = new System.Drawing.Point(273, 75);
+            this.domainUD_units.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.domainUD_units.Name = "domainUD_units";
-            this.domainUD_units.Size = new System.Drawing.Size(123, 26);
+            this.domainUD_units.Size = new System.Drawing.Size(164, 30);
             this.domainUD_units.TabIndex = 2;
             this.domainUD_units.SelectedItemChanged += new System.EventHandler(this.domainUD_units_SelectedItemChanged);
             // 
@@ -72,21 +71,19 @@ namespace WindowsFormsApp1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(36, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(48, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.Size = new System.Drawing.Size(205, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Insulin Dose (in units):";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btn_cancel
             // 
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_cancel.Location = new System.Drawing.Point(203, 118);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancel.Location = new System.Drawing.Point(271, 145);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(125, 37);
+            this.btn_cancel.Size = new System.Drawing.Size(167, 46);
             this.btn_cancel.TabIndex = 5;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
@@ -95,10 +92,10 @@ namespace WindowsFormsApp1
             // btn_administer
             // 
             this.btn_administer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_administer.Location = new System.Drawing.Point(40, 118);
-            this.btn_administer.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_administer.Location = new System.Drawing.Point(53, 145);
+            this.btn_administer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_administer.Name = "btn_administer";
-            this.btn_administer.Size = new System.Drawing.Size(125, 37);
+            this.btn_administer.Size = new System.Drawing.Size(167, 46);
             this.btn_administer.TabIndex = 6;
             this.btn_administer.Text = "Administer";
             this.btn_administer.UseVisualStyleBackColor = true;
@@ -110,30 +107,31 @@ namespace WindowsFormsApp1
             this.errorLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.errorLabel.Location = new System.Drawing.Point(201, 89);
+            this.errorLabel.Location = new System.Drawing.Point(268, 110);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(57, 20);
+            this.errorLabel.Size = new System.Drawing.Size(70, 25);
             this.errorLabel.TabIndex = 7;
             this.errorLabel.Text = "label3";
             this.errorLabel.Visible = false;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 183);
+            this.ClientSize = new System.Drawing.Size(527, 225);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.btn_administer);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.domainUD_units);
             this.Controls.Add(this.label1);
-            this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

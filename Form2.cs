@@ -19,11 +19,6 @@ namespace WindowsFormsApp1
             form1 = f;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_administer_Click(object sender, EventArgs e)
         {
             if(float.Parse(domainUD_units.Text) > 3)
@@ -33,6 +28,12 @@ namespace WindowsFormsApp1
             {
                 form1.addBloodSugarPoint(0, 0);
                 form1.updateInsulinDose(domainUD_units.Text);
+
+                //decrement reservoir
+                //Error case:  they try to inject more insulin than available in the reservoir
+
+
+
                 this.Close();
             }   
         }
