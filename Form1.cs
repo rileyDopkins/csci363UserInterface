@@ -75,10 +75,12 @@ namespace WindowsFormsApp1
             if (comboBx_userMode.SelectedIndex == 0) //MANUAL
             {
                 btn_addDose.Enabled = true;
+                doseHelpButton.Enabled = false;
             }
             else if (comboBx_userMode.SelectedIndex == 1)  //AUTO
             {
                 btn_addDose.Enabled = false;
+                doseHelpButton.Enabled = true;
             }
         }
 
@@ -153,31 +155,19 @@ namespace WindowsFormsApp1
             chart3.Series["Insulin Injection"].Points.AddXY(hour, bloodSugar);
         }
 
+        public void removeAllPoints()
+        {
+            foreach(var series in chart3.Series)
+            {
+                series.Points.Clear();
+            }
+        }
+
         public void updateInsulinDose(String dose)
         {
             lbl_lastDose.Text = dose;
         }
         
-        //Quick test stuff
-        private void button1_Click(object sender, EventArgs e)
-        {
-            lbl_bs.Text = "75";
-            addBloodSugarPoint(9, 75);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            lbl_bs.Text = "45";
-            addBloodSugarPoint(10, 45);
-            addInjectionPoint(10, 45);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            lbl_bs.Text = "85";
-            addBloodSugarPoint(11, 85);
-        }
-
         private void timer_day_Tick(object sender, EventArgs e)
         {
             s += 1;
@@ -204,15 +194,56 @@ namespace WindowsFormsApp1
 
         public void testEmitter(int testName)
         {
+            //Low Battery
             if(testName == 0)
             {
                 progressBar1.Value = 15;
                 //progressBar1.BackColor = Color.Red; maybe ill fix it, if i FEEL like it
                 //write in error pop up
-                MessageBox.Show("Error.\n\n" +
-                    "<<Device will vibrate and sound an alarm>>", "Warning!");
+                label2.Text = "Critically Low Battery";
+                MessageBox.Show("Battery Critically Low.\n\n" +
+                    "<<Device will vibrate and sound an alarm>>", "Critical Battery Level!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            //Needle Failure
+            if(testName == 1)
+            {
+                lbl_needleStatus.Text = "Bad Needle. Requires Replacement.";
+                MessageBox.Show("Needle Failure: Please Replace Needle. \n\n" + "<<Device will vibrate and sound an alarm>>", "Needle Error!", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+            //Pump Failure
+            if(testName == 2)
+            {
+                lbl_pumpStatus.Text = "Pump Failure.";
+                MessageBox.Show("Pump Failure. \n\n" + "<<Device will vibrate and sound an alarm>>", "Pump Failure!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //Sensor Failure
+            if(testName == 3)
+            {
+                lbl_sensorStatus.Text = "Not Functional.";
+                MessageBox.Show("Sensor Failure. \n\n" + "<<Device will vibrate and sound an alarm>>", "Sensor Failure!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //Battery Replaced
+            if(testName == 4)
+            {
+                progressBar1.Value = 15;
+                label2.Text = "100%";
+            }
+
+            //Needle Replaced
+            if(testName == 5)
+            {
+                lbl_needleStatus.Text = "Good";
+            }
+
+            //Sensor Fixed
+            if(testName == 6)
+            {
+                lbl_needleStatus.Text = "Good";
+            }
 
 
 
@@ -222,6 +253,16 @@ namespace WindowsFormsApp1
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbl_sensorStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doseHelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Automatic Mode is On, please turn Manual Mode on to Self Admninister.", "Dosage Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void timer_systemTest_Tick(object sender, EventArgs e)
