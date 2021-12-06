@@ -18,10 +18,44 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
         }
-        int h, m, s, d; //timer
+        /* int h, m, s, d; //timer
 
+
+        float reservoir = 300; */
+        int h, m, s, d; //timer_day
+
+        int h2, m2, s2, d2; //next does countdown
+
+        int n = 0;
 
         float reservoir = 300;
+
+        /* ERROR MESSAGES FOR THE TEST CASES:
+         * MessageBox.Show("The device's sensor has failed." +
+                    "<<Device will vibrate>>\n" +
+                    "<<Device will sound an alarm>>", "Warning!"); //sensor failure
+            MessageBox.Show("The needle needs to be replaced." +
+                    "<<Device will vibrate>>\n" +
+                    "<<Device will sound an alarm>>", "Warning!"); //needle replacement
+            MessageBox.Show("The insulin pump is failing.\n" +
+                    "<<Device will vibrate>>\n" +
+                    "<<Device will sound an alarm>>", "Warning!");
+            MessageBox.Show("The self-test of the insulin\n" +
+                "pump resulted in failure.\n" +
+                    "<<Device will vibrate>>\n" +
+                    "<<Device will sound an alarm>>", "Warning!");
+            MessageBox.Show("The device's needle assembly\nhas been removed. Please replace\n" +
+                "it with a new needle.\n" +
+                    "<<Device will vibrate>>\n" +
+                    "<<Device will sound an alarm>>", "Warning!");
+            MessageBox.Show("The device's insulin reservoir\n" +
+                "has been removed. Please replace\n" +
+                "it with a new resevoir\n" +
+                    "<<Device will vibrate>>\n" +
+                    "<<Device will sound an alarm>>", "Urgent!");
+         */
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -35,8 +69,13 @@ namespace WindowsFormsApp1
             m = 0;
             s = 0;
             d = 0;
-            //txtBx_time.Text = String.Format("{0:D2}:{1:D2}:{2:D2}:{3:D2}", h, m, s, d);
             timer_day.Start();
+
+            //NEXT INSULIN READING TIMER:
+            h2 = 0;
+            m2 = 0;
+            s2 = 0;
+            d2 = 0;
         }
 
         private void comboBx_general_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,6 +95,15 @@ namespace WindowsFormsApp1
                 }
                 //enable system status groupBox
                 grpBx_SystemStatus.Enabled = true;
+
+                //enable next blood sugar reading panel, start the clock
+                panel_nextBSReading.Enabled = true;
+                timer_bloodSugarTest.Enabled = true;
+                timer_bloodSugarTest.Start();
+                m2 = 0;
+                s2 = 0;
+                d2 = 0;
+                lbl_nextReadingClock.Text = String.Format("{0:D2}:{1:D2}:{2:D2}", h2, m2, s2);
             }
             else if (comboBx_general.SelectedIndex == 0)
             {
@@ -185,6 +233,8 @@ namespace WindowsFormsApp1
 
         }
 
+        //CHANGES CHANGES CHANGES CHANGES CHANGES vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
         private void btn_test_Click(object sender, EventArgs e)
         {
             int checkedItem = checkedListBox1.SelectedIndex;
@@ -229,7 +279,7 @@ namespace WindowsFormsApp1
             //Battery Replaced
             if(testName == 4)
             {
-                progressBar1.Value = 15;
+                progressBar1.Value = 100;
                 label2.Text = "100%";
             }
 
@@ -244,12 +294,10 @@ namespace WindowsFormsApp1
             {
                 lbl_needleStatus.Text = "Good";
             }
-
-
-
-
         }
 
+
+        //CHANGES CHANGES CHANGES CHANGES CHANGES ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -262,7 +310,8 @@ namespace WindowsFormsApp1
 
         private void doseHelpButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Automatic Mode is On, please turn Manual Mode on to Self Admninister.", "Dosage Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Automatic Mode is On,\n" +
+                "please turn Manual Mode on to Self Admninister.", "Dosage Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void timer_systemTest_Tick(object sender, EventArgs e)
@@ -275,11 +324,11 @@ namespace WindowsFormsApp1
             //This logic will need to move, here for testing
             float bloodSugarNumber;
             bloodSugarNumber = float.Parse(lbl_bs.Text);
-            if (bloodSugarNumber < 50 || bloodSugarNumber > 110)
+            if (bloodSugarNumber < 56 || bloodSugarNumber > 110)
             {
                 lbl_bs.BackColor = Color.Red;
             }
-            else if (bloodSugarNumber > 50 && bloodSugarNumber < 80)
+            else if (bloodSugarNumber >= 56 && bloodSugarNumber < 70)
             {
                 lbl_bs.BackColor = Color.Orange;
             }
